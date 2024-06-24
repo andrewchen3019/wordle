@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worddle Solver</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="icon.jpg" type="image">
+</head>
+<body id="body">
+    <div id="settings">
+    <div id="settings-content">
+                <div id="x"><i class="fas fa-x"></i></div>
+          <h2>Settings</h2>
+            <div class="settings-row">
+              <div class="label">Dark Mode</div>
+              <div class="switch off" id="dark-switch"><i class="switch-ball fas fa-circle" id="dark-switch-ball"></i></div>
+            </div>
+            <div class="settings-row">
+              <div class="label">High Contrast Mode</div>
+            <div class="switch off" id="contrast-switch"><i class="switch-ball fas fa-circle" id="contrast-switch-ball"></i></div>
+            
+             </div>
+    </div>
+
+  </div>
+   <div id="menu">
+    <div id="menu-x"><i class="fas fa-times"></i></div>
+      <div class="menu-link menu-header">Menu</div>
+    <div class="menu-link"><a href="index.html">Wordle Solver</a></div>
+       <div class="menu-link"><a href="partner.html">Wordle Partner</a></div>
+        <div class="menu-link"><a href="wordle_letters.html?numbers=2">2 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=3">3 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=4">4 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle.html">5 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=6">6 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=7">7 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=8">8 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=9">9 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=10">10 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=11">11 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=12">12 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=13">13 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=14">14 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=15">15 letter wordle</a></div>
+  </div>
+      <header id="header">
+        <button id="bars"><i class="fa-solid fa-bars"></i></button>
+        <h1 id="header-title">WORDLE SOLVER</h1>
+        <button id="settings-button"><i class="fa-solid fa-gear"></i></button>
+    </header>
+    <div id="contextmenu">
+        <div class="option" id="gray">Gray <span class="checkmark"><i class="fas fa-check"></i></span></div>
+        <div class="option" id="green">Green <span class="checkmark"><i class="fas fa-check"></i></span></div>
+        <div class="option" id="yellow">Yellow <span class="checkmark"><i class="fas fa-check"></i></span></div>
+    </div>
+    <div class="container">
+    
+    <div class="container">
+        <div id="old-rows">
+
+        </div>
+        <div class="row" id="edit-row">
+            <div class="letter-edit" id="0"></div>
+            <div class="letter-edit" id="1"></div>
+            <div class="letter-edit" id="2"></div>
+            <div class="letter-edit" id="3"></div>
+            <div class="letter-edit" id="4"></div>
+        </div>
+    </div>
+    <div id="keyboard">
+        <div id="row1" class="poop">
+            <div class="key">Q</div>
+            <div class="key">W</div>
+            <div class="key">E</div>
+            <div class="key">R</div>
+            <div class="key">T</div>
+            <div class="key">Y</div>
+            <div class="key">U</div>
+            <div class="key">I</div>
+            <div class="key">O</div>
+            <div class="key">P</div>
+        </div>
+
+        <div id="row2" class="poop">
+            <div class="key">A</div>
+            <div class="key">S</div>
+            <div class="key">D</div>
+            <div class="key">F</div>
+            <div class="key">G</div>
+            <div class="key">H</div>
+            <div class="key">J</div>
+            <div class="key">K</div>
+            <div class="key">L</div>
+        </div>
+        <div id="row3" class="poop">
+            <div class="key">Enter</div>
+            <div class="key">Z</div>
+            <div class="key">X</div>
+            <div class="key">C</div>
+            <div class="key">V</div>
+            <div class="key">B</div>
+            <div class="key">N</div>
+            <div class="key">M</div>
+            <div class="key"><i class="fas fa-backspace"></i></div>
+        </div>
+        <button id="clear-all">Clear All</button>
+        <button id="undo">Undo</button>
+        <div id="output">
+            <h3>Possible Words</h3>
+            <div id="loading">
+                <img src="TransparentLoading.gif" alt="" height = 
+                50>
+            </div>
+            <div id="output-container">
+
+            </div>
+            <button id="show-more">Show More</button>
+        </div>
+    </div>
+          </div>
+      <div id="signal"></div>
+    <script src="main.js"></script>
+</body>
+</html>

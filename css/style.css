@@ -1,0 +1,270 @@
+* {
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+.row {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  align-items: center;
+}
+
+.letter, .letter-edit {
+    font-weight: bold;
+    font-size: 50px;
+    background-color: #86888a;
+    color: white;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin: 3px;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellow {
+    background-color: #c9b458;
+}
+
+.poop {
+    display: flex;
+}
+
+#row2 {
+    margin-left: 15px;
+}
+
+.key {
+    font-size: 20px;
+    background-color: lightgrey;
+    margin: 3px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.key:hover {
+    opacity: 0.8;
+}
+.grey {
+    background-color: rgb(150, 150, 150);
+    color: white;
+}
+.green {
+    background-color: #6aaa64;
+    color: white;
+}
+#keyboard {
+    margin-top: 30px;
+}
+
+.clicked{
+    border: 2px solid blue;
+}
+
+#contextmenu{
+    background-color: white;
+    width: 100px;
+    border: 1px solid grey;
+    position: absolute;
+    display: none;
+}
+.option{
+  padding: 10px;
+}
+.option:hover{
+    background-color: rgb(150, 150, 150);
+    cursor: pointer;
+}
+.checkmark{
+    display: none;
+}
+#output{
+    text-align: center;
+    background-color: rgb(150, 150, 150);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#output h3{
+    margin: 0;
+}
+#output-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#edit-row{
+    margin-top: 50px;
+}
+#loading{
+    display: none;
+}
+
+@media (max-width: 500px) {
+  .row {
+    width: 100%;
+  }
+
+  .letter, .letter-edit {
+    font-size: 38px;
+    color: white;
+    width: 75px;
+    height:75px;
+}
+}
+
+#clear-all, #undo{
+  width: 100%;
+  border: 0;
+  background-color: lightgray;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#show-more{
+  display: none;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+}
+#header{
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content:space-between;
+}
+#header button {
+  background-color: transparent;
+  border: 0;
+  font-size: 25px;
+}
+#settings {
+  background-color: white;
+  position: absolute;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: none;
+  justify-content: center;
+  animation-duration: 0.3s;
+  animation-name: slideUp;
+}
+#settings-content{
+  width: 540px;
+}
+
+.settings-row{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10px;
+  
+}
+#x {
+  text-align: right;  
+}
+.off{
+  background-color: gray;
+  text-align: left;
+}
+
+.on {
+  background-color: green;
+  text-align: right;
+}
+.contrastMode .on{
+  background-color: #f5793a;
+}
+.switch {
+  height: 30px;
+  width: 50px;
+  border-radius: 15px;
+  color: white;
+  font-size: 25px;
+}
+
+#menu {
+  color: black;
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  background-color: white;
+  display: none;
+  animation-duration: 0.3s;
+  animation-name: slideIn;
+  z-index: 99999999; 
+  border-right: 1px solid gray;
+}
+
+#menu-x{
+  text-align: right;
+  font-size: 20px;
+  margin-right: 5px;
+}
+.menu-link {
+  text-decoration: none;
+  padding: 3px;
+  margin: 10px;
+  color: black;
+}
+.menu-link a {
+  text-decoration: none;
+  color: black;
+}
+.menu-header {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0;
+}
+@keyframes slideIn {
+  from {
+    right: 100%;
+  }
+  to{
+    right: calc(100% - 300px);
+  }
+}
+@keyframes slideDown {
+  from {
+    bottom: 100%;
+  }
+  to{
+    bottom: calc(100% - 300px);
+  }
+}
+@keyframes slideUp {
+  from {
+    top: 100%;
+  }
+  to{
+    top: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .row {
+    width: 100%;
+  }
+  .key {
+    width: 10%;
+  }
+  #menu{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    animation-duration: 0.3s;
+    animation-name: slideDown;
+    z-index: 99999999; 
+    border-right: 0;
+    border-bottom: 1px solid gray;
+  }
+}

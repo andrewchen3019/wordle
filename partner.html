@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Simulator</title>
+    <link rel="stylesheet" href="css/wordle.css">
+  <link rel="stylesheet" href="css/flip.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="icon.jpg" type="image">
+</head>
+<body id="body">
+    <div id="word-form">
+      <div id="wordy">
+      <h1>WORD PARTNER</h1>
+      <p>Enter a word for your friend to guess! Don't let them see!</p>
+      <form action="" id="real-word-form">
+        <input type="text" id="word-input">
+        <input type="submit" value="Submit" id="word-submit">
+      </form>
+      <div id="word-message">Not in the word list</div>
+        </div>
+    </div>
+    <div id="modal-container">
+      <div class="modal" id="modal">
+        <div class="x">
+          <i class="fas fa-times"></i>
+        </div>
+        <h1 id="modal-message">The word was <span id="correct-word"></span></h1>
+        <a href="#" target="_blank" id="define-link"><button id="define-button">Look up definition</button></a>
+        <button id="play-again">Play Again</button>
+      </div>
+    </div>
+  <div id="settings">
+    <div id="settings-content">
+                <div id="x"><i class="fas fa-x"></i></div>
+          <h2>Settings</h2>
+            <div class="settings-row">
+              <div class="label">Dark Mode</div>
+              <div class="switch off" id="dark-switch"><i class="switch-ball fas fa-circle" id="dark-switch-ball"></i></div>
+            </div>
+            <div class="settings-row">
+              <div class="label">High Contrast Mode</div>
+            <div class="switch off" id="contrast-switch"><i class="switch-ball fas fa-circle" id="contrast-switch-ball"></i></div>
+            
+             </div>
+    </div>
+
+  </div>
+   <div id="menu">
+    <div id="menu-x"><i class="fas fa-times"></i></div>
+      <div class="menu-link menu-header">Menu</div>
+    <div class="menu-link"><a href="index.html">Wordle Solver</a></div>
+      <div class="menu-link"><a href="partner.html">Wordle Partner</a></div>
+        <div class="menu-link"><a href="wordle_letters.html?numbers=2">2 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=3">3 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=4">4 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle.html">5 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=6">6 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=7">7 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=8">8 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=9">9 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=10">10 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=11">11 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=12">12 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=13">13 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=14">14 letter wordle</a></div>
+    <div class="menu-link"><a href="wordle_letters.html?numbers=15">15 letter wordle</a></div>
+  </div>
+  <header id="header">
+        <button id="bars"><i class="fa-solid fa-bars"></i></button>
+        <h1 id="header-title">WORD PARTNER</h1>
+        <button id="settings-button"><i class="fa-solid fa-gear"></i></button>
+  </header>
+  <div id="content">
+    <div id="messages">
+      <div class="message" id="not-in-list">Not in the word list</div>
+      <div class="message" id="great">Great</div>
+      <div class="message" id="lose">You lose</div>
+    </div>
+     <div class="container">
+       <div id="loading-container">
+         <img src="TransparentLoading.gif" alt="loading">
+       </div>
+                  <div class="row" id="0">
+        </div>
+        <div class="row" id="1">
+        </div>        <div class="row" id="2">
+        </div>        <div class="row" id="3">
+        </div>        <div class="row" id="4">
+        </div>        <div class="row" id="5">
+        </div>
+    </div>
+    <div id="keyboard">
+        <div id="row1" class="poop">
+            <div class="key" id="Q">Q</div>
+            <div class="key" id="W">W</div>
+            <div class="key" id="E">E</div>
+            <div class="key" id="R">R</div>
+            <div class="key" id="T">T</div>
+            <div class="key" id="Y">Y</div>
+            <div class="key" id="U">U</div>
+            <div class="key" id="I">I</div>
+            <div class="key" id="O">O</div>
+            <div class="key" id="P">P</div>
+        </div>
+
+        <div id="row2" class="poop">
+            <div class="key" id="A">A</div>
+            <div class="key" id="S">S</div>
+            <div class="key" id="D">D</div>
+            <div class="key" id="F">F</div>
+            <div class="key" id="G">G</div>
+            <div class="key" id="H">H</div>
+            <div class="key" id="J">J</div>
+            <div class="key" id="K">K</div>
+            <div class="key" id="L">L</div>
+        </div>
+        <div id="row3" class="poop">
+            <div class="key" id="Enter">Enter</div>
+            <div class="key" id="Z">Z</div>
+            <div class="key" id="X">X</div>
+            <div class="key" id="C">C</div>
+            <div class="key" id="V">V</div>
+            <div class="key" id="B">B</div>
+            <div class="key" id="N">N</div>
+            <div class="key" id="M">M</div>
+            <div class="key" id="Backspace"><i class="fas fa-backspace"></i></div>
+        </div>
+      </div>
+    </div>
+    <div id="signal">klkl</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js" integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
+    <script src="partner.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+ * {
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+body {
+  margin: 0;
+}
+button {
+    color: black;
+}
+#content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body.darkmode {
+  background-color: black;
+  color: white;
+}
+.row {
+    display: grid;
+}
+.container{
+  margin: auto;
+}
+.flip-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3px;
+}
+.letter-edit, .flip-card-back {
+    font-weight: bold;
+    font-size: 50px;
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin: 3px;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+.darkmode .letter-edit,.flip-card-back {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+.darkmode header button{
+  color: white;
+}
+.poop {
+    display: flex;
+}
+
+#row2 {
+    margin-left: 15px;
+}
+
+.key {
+  font-size: 20px;
+  background-color: lightgrey;
+  margin: 3px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.key:hover {
+    opacity: 0.8;
+}
+.R {
+    background-color: rgb(150, 150, 150);
+    color: white;
+}
+.Y{
+  background-color: #c9b458;
+  color: white!important;
+}
+.G{
+    background-color: #6aaa64;
+    color: white;
+}
+.contrastMode .G{
+  background-color: #f5793a;
+}
+.contrastMode .Y{
+  background-color: #85c0f9;
+}
+#keyboard {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+#messages{
+  height: 50px;
+  position: absolute;
+  top: 70px;
+  z-index: 999999999999999;
+}
+.message{
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+/*modal*/
+#modal-container{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(255,255,255,0.8);
+  
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.darkmode #modal-container{
+  background-color: rgba(0,0,0,0.8);
+}
+.modal{
+  width: 300px;
+  height: 300px;
+  display: none;
+  padding: 20px;
+  z-index: 9;
+  position: absolute;
+  background: white;
+  text-align: center;
+  box-shadow: 0 4px 23px 0 rgb(0 0 0 / 20%);
+}
+.darkmode .modal{
+  background: black;
+  color: white;
+}
+.x{
+  font-size: 25px;
+  text-align: right;
+  width: 300px;
+}
+#play-again{
+  width: 100%;
+  height: 30px;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#define-button{
+  width: 100%;
+  height: 30px;
+  background-color: gray;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#header{
+  width: 100%;
+  margin: 0;
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  justify-content:space-between;
+}
+#header h1 {
+  margin: 10px;
+}
+#header button {
+  background-color: transparent;
+  border: 0;
+  font-size: 25px;
+}
+#settings {
+  background-color: white;
+  position: absolute;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: none;
+  justify-content: center;
+  animation-duration: 0.3s;
+  animation-name: slideUp;
+}
+#settings-content{
+  width: 540px;
+}
+.darkmode #settings {
+  background-color: black;
+}
+.settings-row{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10px;
+  
+}
+#x {
+  text-align: right;  
+}
+.off{
+  background-color: gray;
+  text-align: left;
+}
+
+.on {
+  background-color: green;
+  text-align: right;
+}
+.contrastMode .on{
+  background-color: #f5793a;
+}
+.switch {
+  height: 30px;
+  width: 50px;
+  border-radius: 15px;
+  color: white;
+  font-size: 25px;
+}
+
+#menu {
+  color: black;
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  background-color: white;
+  display: none;
+  animation-duration: 0.3s;
+  animation-name: slideIn;
+  z-index: 99999999; 
+  border-right: 1px solid gray;
+}
+@media (max-width: 500px) {
+  .row {
+    width: 100%;
+  }
+  .key {
+    width: 10%;
+  }
+  #menu{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    animation-duration: 0.3s;
+    animation-name: slideDown;
+    z-index: 99999999; 
+    border-right: 0;
+    border-bottom: 1px solid gray;
+  }
+}
+
+
+#menu-x{
+  text-align: right;
+  font-size: 20px;
+  margin-right: 5px;
+}
+.menu-link {
+  text-decoration: none;
+  padding: 3px;
+  margin: 10px;
+  color: black;
+}
+.menu-link a {
+  text-decoration: none;
+  color: black;
+}
+.menu-header {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0;
+}
+@keyframes slideIn {
+  from {
+    right: 100%;
+  }
+  to{
+    right: calc(100% - 300px);
+  }
+}
+@keyframes slideDown {
+  from {
+    bottom: 100%;
+  }
+  to{
+    bottom: calc(100% - 100vh);
+  }
+}
+@keyframes slideUp {
+  from {
+    top: 100%;
+  }
+  to{
+    top: 0;
+  }
+}
+
+#word-form{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999999;
+  background-color: white;
+}
+
+#word-message{
+  display: none;
+  color: red;
+
+}
+#word-input{
+  text-transform: uppercase;
+  height: 50px;
+  font-size: 30px;
+  width: 200px;
+  padding: 0;
+  margin: 7px;
+}
+#word-submit{
+  display: block;
+  width: 200px;
+  height: 50px;
+  border: 42x solid black;
+  background: transparent;
+  margin: 7px;
+  font-size: 30px;
+  cursor: pointer;
+}
+#wordy {
+  height: 50vh;
+  width: 45vw;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#signal{
+  display: none;
+}
+
+#loading-container{
+  text-align: center;
+}
+#loading-container img{
+  width:100px;
+  height: 100px;
+}
